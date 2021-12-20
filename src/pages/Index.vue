@@ -5,7 +5,7 @@
       standout
       bottom-slots
       v-model="text"
-      label="Search for token name or symbol"
+      label="Search for token name, symbol, or contract address"
       counter
       maxlength="120"
       :disabled="this.disabled"
@@ -54,11 +54,14 @@
           <p>
             <strong>Confidence Score: </strong>
             <strong
-            :class="token.confident_score >= 70 ? 'green' :
-            (token.confident_score >= 50 ? 'orange' : 'red')">
+            :class="token.confident_score > 60 ? 'green' :
+            (token.confident_score >= 35 ? 'orange' : 'red')">
               {{token.confident_score}}
             </strong>
           </p>
+        </div>
+        <div v-if="token.final_verdict_by_emoji !== ''" class="row">
+          <p><strong>Confidence Emoji:</strong> {{token.final_verdict_by_emoji}}</p>
         </div>
         <div class="row">
           <p><strong>Final Verdict:</strong> {{token.final_verdict}}</p>
