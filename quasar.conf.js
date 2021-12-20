@@ -142,7 +142,7 @@ module.exports = configure(function (ctx) {
       manifest: {
         name: `RugScan Search`,
         short_name: `RugScan Search`,
-        description: `Sloppy search engine for RugScan since they don't have one...`,
+        description: `Basic search engine for RugScan results.`,
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
